@@ -1,0 +1,52 @@
+!!! XML 
+!!! 1.1
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title 뜨거운 루비 :: 함께 전하는 루비 뉴스    
+    %link{:rel => 'stylesheet', :href => '/stylesheets/screen.css', :type => 'text/css', :media => 'screen, projection'}/
+    %link{:rel => 'stylesheet', :href => '/stylesheets/print.css', :type => 'text/css', :media => 'print'}/
+    %link{:rel => 'stylesheet', :href => '/stylesheets/xq_contents.css', :type => 'text/css', :media => 'screen, projection'}/
+    %link{:rel => 'stylesheet', :href => '/stylesheets/xq_ui.css', :type => 'text/css', :media => 'screen, projection'}/    
+    /[if IE]
+      %link{:rel => 'stylesheet', :href => '/stylesheets/ie.css', :type => 'text/css', :media => 'screen, projection'}/
+  %body
+    .container.box
+      #header
+        .column.span-16
+          %a{:href => '/'}
+            %img{:src => '/images/title.png', :alt => ' 뜨거운 루비 :: 함께 전하는 루비 뉴스'}
+        .column.span-8.last
+          #menu
+            %a{:href => '/write'} 새소식 전하기
+            |
+            %a{:href => 'http://forum.rubykr.org/'} 루비 사용자 포럼
+        %hr   
+      #contents.column.span-16.prepend-1.append-1
+        = yield
+      #column.span-6.last
+        #sidebar.box
+          = sidebar
+    #footer
+      Developed by
+      %a{:href => 'http://myruby.net/pages/1330384'} deepblue
+      | Powered by
+      %a{:href => 'http://rubyseminar.springnote.com/pages/1325544'} springnote
+      ,
+      %a{:href => 'http://forum.rubykr.org/'} rubykr
+      , 
+      %a{:href => 'http://sinatrarb.com/'} sinatra
+      and 
+      %a{:href => 'http://github.com/'} github
+      
+      
+:javascript
+  (function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+    }
+    document.write('<script type="text/javascript" src="http://disqus.com/forums/hotruby/get_num_replies.js' + query + '"></' + 'script>');
+  })();

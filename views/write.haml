@@ -1,0 +1,42 @@
+.notice
+  오늘은 어떤 소식이 여러분을 즐겁게 했나요? 함께 나눠요~
+
+%form#frmWrite{:action => 'ANTISPAM', :method => 'post'}
+  %fieldset
+    %legend 새 소식을 전합니다    
+    %input.hide{:type => 'text', :name => 'email'}
+    %textarea.hide{:type => 'text', :name => 'contents'}
+
+    %label{:for => 'author_name'}작성자 이름
+    %input#author_name.text{:type => 'text', :name => 'rref'}
+
+    %label{:for => 'author_homepage'}작성자 홈페이지
+    %input#author_homepage.text{:type => 'text', :name => 'rres'}
+
+    %label{:for => 'xqEditor'}내용
+    %textarea#xqEditor.text{:type => 'text', :name => 'rree'}
+    
+    %p
+      %input{:type =>'button', :value => '작성을 마칩니다', :onclick => "ok('frmWrite', '/write');"}
+
+%link{:rel => 'stylesheet', :href => '/stylesheets/xq_contents.css', :type => 'text/css', :media => 'screen, projection'}/
+%link{:rel => 'stylesheet', :href => '/stylesheets/xq_ui.css', :type => 'text/css', :media => 'screen, projection'}/
+  
+%script{:type => 'text/javascript', :src => '/javascripts/xquared.js'}
+:javascript
+  var xed;
+  window.onload = function() {
+    xed = new xq.Editor("xqEditor");
+    xed.setEditMode('wysiwyg');
+  }
+  
+  function ok(frmId, actionUrl) {
+    var frm = document.getElementById(frmId);
+    if(!frm) return;
+    frm.action = actionUrl;
+    
+    var field = document.getElementById('xqEditor');
+    field.value = xed.getCurrentContent();
+    
+    frm.submit();
+  }
