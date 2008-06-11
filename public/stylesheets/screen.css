@@ -238,14 +238,14 @@ textarea {width:550px;height:300px;padding:5px;}
 
 
 /* http://www.ikhono.net/2008/1/4/fancy-links-plugin-for-blueprintcss */
-div#item_body a[href^="http://hot.rubykr.org"]{background-image:none !important;padding-left:0 !important}
+/*div.item_body a[href^="http://hot.rubykr.org"]{background-image:none !important;padding-left:0 !important}
 .exempt{background-image:none !important;padding:0 !important}
-.external, div#item_body a[href^="http:"]{background:url(/images/link.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
-div#item_body  a[href^="mailto:"]{background:url(/images/email.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
-div#item_body a[href^="aim:"]{background:url(/images/group.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
-div#item_body a[href$=".pdf"]{background:url(/images/pdf.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
-div#item_body a[href$=".doc"]{background:url(/images/word.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
-div#item_body a[href$=".rss"],a[href$=".rdf"]{background:url(/images/feed.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
+.external_link, div.item_body a[href^="http:"]{background:url(/images/link.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
+div.item_body  a[href^="mailto:"]{background:url(/images/email.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
+div.item_body a[href^="aim:"]{background:url(/images/group.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
+div.item_body a[href$=".pdf"]{background:url(/images/pdf.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
+div.item_body a[href$=".doc"]{background:url(/images/word.png) no-repeat left top;padding-left:20px;padding-bottom:5px}
+div.item_body a[href$=".rss"],a[href$=".rdf"]{background:url(/images/feed.png) no-repeat left top;padding-left:20px;padding-bottom:5px}*/
 
 
 body       { background: #32331D; }

@@ -2,7 +2,8 @@
 !!! 1.1
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
-    %title 뜨거운 루비 :: 함께 전하는 루비 뉴스    
+    %title 뜨거운 루비 :: 함께 전하는 루비 뉴스
+    %link{:rel => 'alternate', :title => 'News', :type => 'application/atom+xml', :href => 'http://feeds.feedburner.com/hotruby'}
     %link{:rel => 'stylesheet', :href => '/stylesheets/screen.css', :type => 'text/css', :media => 'screen, projection'}/
     %link{:rel => 'stylesheet', :href => '/stylesheets/print.css', :type => 'text/css', :media => 'print'}/
     %link{:rel => 'stylesheet', :href => '/stylesheets/xq_contents.css', :type => 'text/css', :media => 'screen, projection'}/
@@ -17,6 +18,8 @@
             %img{:src => '/images/title.png', :alt => ' 뜨거운 루비 :: 함께 전하는 루비 뉴스'}
         .column.span-8.last
           #menu
+            %a{:href => 'http://feeds.feedburner.com/hotruby'} RSS 구독
+            |
             %a{:href => '/write'} 새소식 전하기
             |
             %a{:href => 'http://forum.rubykr.org/'} 루비 사용자 포럼
@@ -36,7 +39,7 @@
       , 
       %a{:href => 'http://sinatrarb.com/'} sinatra
       and 
-      %a{:href => 'http://github.com/'} github
+      %a{:href => 'http://github.com/deepblue/hotruby/tree'} github
       
       
 :javascript
