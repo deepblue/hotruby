@@ -1,10 +1,12 @@
 %feed{:xmlns => 'en-US', :xmlns => 'http://www.w3.org/2005/Atom'}
   %id HotRuby
-  %link{:type => 'text/html', :rel => 'alternate', :href => 'http://hot.rubykr.org'}
+  %link{:type => 'text/html', :rel => 'alternate', :href => 'http://hot.rubykr.org/'}
   %title 뜨거운 루비 :: 함께 전하는 루비 뉴스 
+  %updated= Time.now.xmlschema
   
   - @items.each do |item|
     %entry
-      %id= "HotRuby-#{item.identifier}"
-      %title= " 뜨거운 루비 @ #{item.title}"
-      %content{:type => 'html'}&= item.source
+      %id= "HotRuby-#{item[:identifier]}"
+      %title= " 뜨거운 루비 #{item[:title]}"
+      %link{:type => 'text/html', :rel => 'alternate', :href => "http://hot.rubykr.org/items/#{item[:page_id]}/#{item[:identifier]}"}
+      %content{:type => 'html'}&= item[:source]

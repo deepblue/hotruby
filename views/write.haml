@@ -8,10 +8,10 @@
     %textarea.hide{:type => 'text', :name => 'contents'}
 
     %label{:for => 'author_name'}작성자 이름
-    %input#author_name.text{:type => 'text', :name => 'rref'}
+    %input#author_name.text{:type => 'text', :name => 'rref', :value => @author_name}
 
     %label{:for => 'author_homepage'}작성자 홈페이지
-    %input#author_homepage.text{:type => 'text', :name => 'rres'}
+    %input#author_homepage.text{:type => 'text', :name => 'rres', :value => @author_homepage}
 
     %label{:for => 'xqEditor'}내용
     %textarea#xqEditor.text{:type => 'text', :name => 'rree'}

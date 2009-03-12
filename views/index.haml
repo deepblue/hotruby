@@ -1,4 +1,8 @@
-- @items.each do |item|
-  %h3.newdate= item.title
-  .item
-    = item.source
+- if @items && !@items.empty?
+  - @items.each do |item|
+    %h3.newdate
+      %a{:href => "/items/#{item.identifier}"}= item.title
+    .item
+      = item.source
+- else
+  요청하신 내용을 찾을 수 없습니다.
