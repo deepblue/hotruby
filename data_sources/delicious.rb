@@ -32,7 +32,8 @@ class Delicious
 end
 
 
-del = Delicious.new('hotruby', 'TDQLVkJuPugF4EHTglOcRYsbm_U-')
+config = YAML.load(File.read(File.dirname(__FILE__) + '/../datasources.yml'))['delicious']
+del = Delicious.new(config['id'], config['key'])
 springnote = SpringnoteStore.new
 
 del.with_last_runtime do |last, now|

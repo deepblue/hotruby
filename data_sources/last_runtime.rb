@@ -7,13 +7,18 @@ module LastRuntime
     YAML.load(File.read(YML_FILE))
   end
   
+  def key_name
+    self.name rescue self.class.name
+  end
+  
+  
   def last_runtime
-    load_yml[self.class.name] rescue nil
+    load_yml[key_name] rescue nil
   end
   
   def update_last_runtime(t)
     yml = load_yml rescue {}
-    yml[self.class.name] = t
+    yml[key_name] = t
     File.open(YML_FILE, 'w+'){|f| f.write yml.to_yaml}
   end
   

@@ -1,4 +1,3 @@
-springnote.yml
-.DS_Store
+*yml
 log/*
 tmp/**/*
